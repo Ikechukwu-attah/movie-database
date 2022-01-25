@@ -1,0 +1,90 @@
+.nav-bar {
+    // width: 100%;
+    background-color: rgb(2, 2, 2);
+    display: flex;
+    align-items: center;
+    height: 7vh;
+    padding-left: 10%;
+    padding-right: 10%;
+    &__logo {
+        background-color: orange;
+        width: 7rem;
+        height: 3.5rem;
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        font-weight: 900;
+    }
+    &__menu {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        margin-left: 2rem;
+        gap: 0.4rem;
+        .menuIcon {
+            color: gray;
+        }
+    }
+    &__search {
+        flex: 5;
+        background-color: #fff;
+        width: 100%;
+        height: 3.2rem;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        border: 1px solid;
+        input {
+            width: 90%;
+            height: 3rem;
+            border: none;
+            outline: none;
+            margin-left: 1rem;
+        }
+        .searchIcon {
+            margin-right: 1rem;
+            color: gray;
+        }
+    }
+    &__search:hover {
+        border: 3px solid orange;
+    }
+    &__selections {
+        height: 3.2rem;
+        border-right: 1px solid #000;
+        outline: none;
+        display: flex;
+        align-items: center;
+        .selectArrowIcon {
+            color: gray;
+            cursor: pointer;
+        }
+        .selectionItems {
+            color: gray;
+            padding-left: 1rem;
+        }
+    }
+    &__right {
+        flex: 3;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .rightborder {
+            border-right: 1px solid gray;
+        }
+        .imdbPro {
+            margin-left: 1rem;
+        }
+        .rightIcon {
+            color: gray;
+        }
+    }
+    &__rightListContainer {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}
