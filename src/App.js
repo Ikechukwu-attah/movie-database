@@ -1,11 +1,8 @@
 import "./App.scss";
+import NavBar from "./components/navbar/NavBar";
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Movie db</h1>
-    </div>
-  );
+  return <NavBar />;
 }
 
 export default App;
