@@ -1,11 +1,14 @@
 import React from "react";
+import FeaturedMovies from "../featured/FeaturedMovies";
+import Header from "../Header/Header";
+
 import "./home.scss";
 
 const Home = () => {
   return (
     <div className="home">
-      <h1>check</h1>
-      <h1>try</h1>
+      <Header />
+      <FeaturedMovies />
     </div>
   );
 };
