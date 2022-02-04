@@ -1,0 +1,25 @@
+.featured-movies {
+    h3 {
+        padding-bottom: 1rem;
+        color: orange;
+        text-transform: capitalize;
+    }
+}
+
+.featured-ratings {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    &__featured-rating-icon {
+        color: orange;
+    }
+}
+
+.featured-movie-image:hover {
+    transition: all 0.2s;
+    transform: scale(1.2);
+}
+
+.featured-movie-title {
+    padding-top: 1rem;
+}

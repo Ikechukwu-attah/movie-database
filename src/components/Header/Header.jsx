@@ -6,7 +6,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { rightMovie } from "../../Dummydata";
 import RightMovies from "../rightMovies/RightMovies";
-import Slider from "react-slick";
+
 import "./header.scss";
 
 const Header = () => {
