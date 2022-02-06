@@ -1,0 +1,42 @@
+.movies-card {
+    background-color: rgb(31, 30, 30);
+    height: 550px;
+    width: 300px;
+    // object-fit: cover;
+    .movies-images {
+        background-size: cover;
+    }
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // .favourite-movie-cover {
+        //     width: 30px;
+        //     height: 30px;
+        //     background-color: aqua;
+        //     display: flex;
+        // }
+        .favourite-movie {
+            color: red;
+            margin-top: 1.3rem;
+            padding-right: 1rem;
+            cursor: pointer;
+        }
+        .favourite-movie:hover {
+            transform: scale(1.2);
+            color: #ffa500;
+        }
+    }
+    &__ratings {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        .movie-rating-icon {
+            color: orange;
+        }
+        .movie-rating-text {
+            color: #808080;
+        }
+    }
+}

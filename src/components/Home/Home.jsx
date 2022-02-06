@@ -1,6 +1,7 @@
 import React from "react";
 import FeaturedMovies from "../featured/FeaturedMovies";
 import Header from "../Header/Header";
+import MovieList from "../movieList/MovieList";
 
 import "./home.scss";
 

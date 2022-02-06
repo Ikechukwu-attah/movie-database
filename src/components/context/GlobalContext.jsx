@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 export const globalMovieContext = createContext();
@@ -7,13 +8,17 @@ const name = "harry";
 
 const GlobalMovieProvider = ({ children }) => {
   const [movies, setMovies] = useState([]);
+  const [movieDetail, setMovieDetail] = useState();
+  const [allMovies, setAllMovies] = useState();
+  const { movieId } = useParams();
+
   useEffect(() => {
     const retriveData = async () => {
       try {
         const response = await axios.get(
           `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
         );
-        console.log("RESPONSE :", response.data);
+        // console.log("RESPONSE :", response.data);
         if (response.status === 200) {
           setMovies(response.data.results);
         }
@@ -21,12 +26,47 @@ const GlobalMovieProvider = ({ children }) => {
         console.log(error);
       }
     };
-
     retriveData();
   }, []);
 
+  const retriveAllMovies = async () => {
+    try {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
+      );
+      console.log("All Movies", response.data);
+      if (response.status === 200) {
+        setAllMovies(response.data.results);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getMoviesById = async (id) => {
+    try {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
+      );
+      console.log("MOVIE DETAILS:", response.data);
+      if (response.data === 200) {
+        setMovieDetail(response.data.results);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <globalMovieContext.Provider value={{ movies }}>
+    <globalMovieContext.Provider
+      value={{
+        movies,
+        movieDetail,
+        allMovies,
+        retriveAllMovies,
+        getMoviesById,
+      }}
+    >
       {children}
     </globalMovieContext.Provider>
   );

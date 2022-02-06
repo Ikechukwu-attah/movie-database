@@ -13,8 +13,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/all-movie" element={<MovieList />} />
-          <Route path="/movie-detail:id" element={<MovieDetail />} />
+          <Route path="/allmovie" element={<MovieList />} />
+          <Route path="/detail/:movieId" element={<MovieDetail />} />
         </Routes>
       </BrowserRouter>
     </GlobalMovieProvider>
