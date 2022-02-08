@@ -2,20 +2,15 @@
     background-color: rgb(31, 30, 30);
     height: 550px;
     width: 300px;
-    // object-fit: cover;
-    .movies-images {
-        background-size: cover;
+    .movies-link {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.5rem;
     }
     &__wrapper {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        // .favourite-movie-cover {
-        //     width: 30px;
-        //     height: 30px;
-        //     background-color: aqua;
-        //     display: flex;
-        // }
         .favourite-movie {
             color: red;
             margin-top: 1.3rem;
@@ -39,4 +34,9 @@
             color: #808080;
         }
     }
+}
+
+li .movies-text {
+    padding: 1rem 0 0 1rem !important;
+    margin-left: 30rem;
 }

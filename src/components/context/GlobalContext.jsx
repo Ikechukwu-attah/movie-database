@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 
 export const globalMovieContext = createContext();
@@ -8,9 +7,8 @@ const name = "harry";
 
 const GlobalMovieProvider = ({ children }) => {
   const [movies, setMovies] = useState([]);
-  const [movieDetail, setMovieDetail] = useState();
+  const [movieDetail, setMovieDetail] = useState("");
   const [allMovies, setAllMovies] = useState();
-  const { movieId } = useParams();
 
   useEffect(() => {
     const retriveData = async () => {
@@ -48,9 +46,10 @@ const GlobalMovieProvider = ({ children }) => {
       const response = await axios.get(
         `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`
       );
-      console.log("MOVIE DETAILS:", response.data);
-      if (response.data === 200) {
-        setMovieDetail(response.data.results);
+      console.log("MOVIE DETAILS:", movieDetail);
+      if (response.data) {
+        setMovieDetail(response.data);
+        console.log("movie-single", movieDetail);
       }
     } catch (error) {
       console.log(error);

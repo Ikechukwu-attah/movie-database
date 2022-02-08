@@ -5,6 +5,7 @@ import "./movieList.scss";
 
 const MovieList = () => {
   const { allMovies, retriveAllMovies } = useContext(globalMovieContext);
+  console.log("allMovies:", allMovies);
 
   useEffect(() => {
     retriveAllMovies();
