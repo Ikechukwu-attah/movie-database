@@ -30,6 +30,9 @@
         .movie-rating-icon {
             color: orange;
         }
+        .movie-rating-green {
+            color: green;
+        }
         .movie-rating-text {
             color: #808080;
         }
@@ -39,4 +42,17 @@
 li .movies-text {
     padding: 1rem 0 0 1rem !important;
     margin-left: 30rem;
+}
+
+.favourite-movie-cover {
+    background-color: orange;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    color: white !important;
+    border: none;
+    &:hover {
+        background-color: red !important;
+        transform: scaleY(1.2);
+    }
 }

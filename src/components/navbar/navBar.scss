@@ -1,10 +1,18 @@
 .nav-bar {
-    background-color: rgb(20, 20, 20);
-    display: flex;
-    align-items: center;
-    height: 7vh;
-    padding-left: 10%;
-    padding-right: 10%;
+    width: 100%;
+    position: relative;
+    &__desktop {
+        display: flex;
+        align-items: center;
+        background-color: rgb(20, 20, 20);
+        padding-left: 10%;
+        padding-right: 10%;
+        height: 7vh;
+        font-size: clamp(0.1rem, 2.5vw, 1.9rem);
+        @media only screen and (max-width: 1260px) {
+            display: none;
+        }
+    }
     &__logo {
         background-color: orange;
         width: 7rem;
@@ -21,7 +29,7 @@
         display: flex;
         align-items: center;
         margin-left: 2rem;
-        gap: 0.4rem;
+        gap: 0.8rem;
         .menuIcon {
             color: gray;
         }
@@ -36,6 +44,7 @@
         align-items: center;
         font-size: 1.5rem;
         border: 1px solid;
+        margin-left: 1rem;
         input {
             width: 90%;
             height: 3rem;
@@ -67,10 +76,11 @@
         }
     }
     &__right {
-        flex: 3;
+        // flex: 4;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 1rem;
         .rightborder {
             border-right: 1px solid gray;
         }
@@ -85,5 +95,135 @@
         display: flex;
         align-items: center;
         gap: 1rem;
+    }
+    &__menu-item {
+        cursor: pointer;
+    }
+    // Link {
+    //     text-decoration: none !important;
+    // }
+    // &__rightSignIn {
+    // }
+}
+
+.mobile-screen {
+    width: 100%;
+    &__wrapper {
+        padding: 0 10% 0 10%;
+        background-color: rgb(20, 20, 20);
+        // display: flex;
+        justify-content: space-between;
+        // padding-top: 2rem;
+        align-items: center;
+        display: none;
+        height: 7vh;
+        gap: 2rem;
+        // font-size: clamp(1rem, 2.5vw, 1rem);
+        @media only screen and (max-width: 1254px) {
+            display: flex;
+        }
+    }
+    &__left {
+        display: flex;
+        gap: 3rem;
+        flex: 20%;
+        .menuIcon {
+            transform: transition 0.4s ease-out;
+            cursor: pointer;
+        }
+        ul {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            left: 5px;
+            padding-top: 9rem !important;
+            box-sizing: border-box;
+            background-color: rgb(22, 21, 21);
+            bottom: 0;
+            height: 100vh;
+            width: 60%;
+            // background-color: #000;
+            z-index: 10;
+            li {
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                padding: 1rem 0 1rem 0;
+                font-size: 1.6rem;
+                cursor: pointer;
+                &:not(:last-child) {
+                    margin-bottom: 1.5rem;
+                }
+            }
+            li:hover {
+                background-color: rgb(35, 36, 36);
+            }
+            .mobile-close-icon {
+                position: absolute;
+                right: 3rem;
+                top: 3rem;
+                cursor: pointer;
+            }
+        }
+        #hidden {
+            display: none;
+        }
+        .mobile-move {
+            transition: all 0.2s ease-out;
+        }
+        .imdb-logo {
+            background-color: orange;
+            width: 7rem;
+            height: 3.5rem;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-weight: 900;
+            @media only screen and (max-width: 811px) {
+                font-size: 1.5rem;
+                height: 2.5rem;
+                width: 4rem;
+            }
+        }
+    }
+    &__center {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 58%;
+        background-color: #fff;
+        width: 100%;
+        height: 3.2rem;
+        border-radius: 0.5rem;
+        input {
+            width: 90%;
+            height: 3rem;
+            border: none;
+            outline: none;
+            margin-left: 1rem;
+        }
+        .mobile-searchIcon {
+            margin-right: 1rem;
+            color: gray;
+        }
+    }
+    &__right {
+        display: flex;
+        // align-items: center;
+        gap: 2rem;
+        // flex: 20%;
+        justify-content: space-between;
+        .mobile-signin {
+            white-space: nowrap;
+        }
+        .select-langauge {
+            display: flex;
+            // align-items: center;
+        }
+        @media only screen and (max-width: 811px) {
+            font-size: 1.6rem;
+        }
     }
 }

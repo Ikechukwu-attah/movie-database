@@ -11,7 +11,7 @@ const MovieDetail = () => {
   console.log("movieDetils", movieDetail);
   useEffect(() => {
     getMoviesById(movieId);
-  }, [movieId, getMoviesById]);
+  }, [movieId]);
 
   return (
     <div className="movie-detail-container">

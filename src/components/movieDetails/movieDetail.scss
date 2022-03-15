@@ -6,15 +6,25 @@
         align-items: center;
         justify-content: space-between;
         margin-top: 2rem;
+        @media only screen and (max-width: 811px) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
         span {
             text-transform: uppercase;
             color: #fff;
             opacity: 0.5;
             font-size: 1.4rem;
+            @media only screen and (max-width: 811px) {
+                font-size: 1rem;
+            }
         }
         &__top-right {
             display: flex;
             gap: 2rem;
+            @media only screen and (max-width: 811px) {
+                font-size: 1rem;
+            }
         }
         &__right-sub {
             display: flex;
@@ -33,10 +43,16 @@
     .movie-detail-feature {
         display: flex;
         padding-top: 2rem;
+        @media only screen and (max-width: 811px) {
+            flex-direction: column;
+        }
         &__left {
             display: flex;
             gap: 3rem;
             flex: 60%;
+            @media only screen and (max-width: 811px) {
+                flex-direction: column;
+            }
         }
         &__item {
             margin-top: 2rem;
@@ -48,6 +64,9 @@
                 gap: 3rem;
                 .feature-list {
                     font-size: 1.9rem;
+                    @media only screen and (max-width: 811px) {
+                        font-size: 1.3rem;
+                    }
                 }
             }
         }
@@ -66,5 +85,8 @@
     h2,
     h3 {
         font-size: 1.9rem;
+        @media only screen and (max-width: 811px) {
+            font-size: 1.2rem;
+        }
     }
 }

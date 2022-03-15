@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 
 import "./movieCard.scss";
 
-const MovieCard = ({ movies }) => {
-  const { getMovieById } = useContext(globalMovieContext);
+const MovieCard = ({ movies, isFavorite }) => {
+  const { favourite, addToFavouriteMovie } = useContext(globalMovieContext);
+  console.log("FAVOURITE:", favourite);
   return (
     <div className="movies-card">
       <Link to={`/detail/${movies.id}`} className="movies-link">
@@ -17,27 +18,34 @@ const MovieCard = ({ movies }) => {
               src={`https://image.tmdb.org/t/p/w300/${movies.poster_path}`}
               alt={movies.title}
               className="movies-images"
-              // onClick={() => getMovieById(movies.id)}
             />
           ) : (
             <h3>No Image</h3>
           )}
         </li>
-        <li className="movies-title">{movies.title}</li>
-        <div className="movies-card__wrapper">
-          <div className="movies-card__ratings">
-            <GradeIcon fontSize="large" className="movie-rating-icon" />
-            <span className="movie-rating-text">{movies.vote_average}</span>
-          </div>
-          <span className="favourite-movie-cover">
-            <BookmarkAddIcon
-              fontSize="large"
-              className="favourite-movie"
-              onClick={() => {}}
-            />
-          </span>
-        </div>
       </Link>
+      <li className="movies-title">{movies.title}</li>
+      <div className="movies-card__wrapper">
+        <div className="movies-card__ratings">
+          <GradeIcon fontSize="large" className="movie-rating-icon" />
+          <span className="movie-rating-text">{movies.vote_average}</span>
+        </div>
+        <button
+          className="favourite-movie-cover"
+          style={{
+            color: isFavorite ? "purple" : "yellow",
+          }}
+          onClick={() => {
+            addToFavouriteMovie(movies, movies.id);
+          }}
+        >
+          Add to Fav
+          {/* <BookmarkAddIcon
+            fontSize="large"
+            className="favourite-movie" */}
+          {/* /> */}
+        </button>
+      </div>
     </div>
   );
 };

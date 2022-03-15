@@ -1,10 +1,14 @@
 .movie-header {
     display: flex;
     gap: 2rem;
+    @media only screen and (max-width: 811px) {
+        display: block;
+    }
     &__left {
         flex: 65%;
-        // background: red;
-        // height: max-content;
+        @media only screen and (max-width: 811px) {
+            flex: 100%;
+        }
         .slick-next {
             right: -25px;
         }
@@ -16,10 +20,16 @@
         h3 {
             padding-bottom: 1rem;
             color: orange;
+            @media only screen and (max-width: 811px) {
+                display: none;
+            }
         }
     }
     &__right-side {
         // background-color: rgb(34, 34, 34);
+        @media only screen and (max-width: 811px) {
+            display: none;
+        }
         color: #fff;
         display: flex;
         flex-direction: column;
@@ -28,6 +38,9 @@
         & u {
             margin: 0;
             padding: 0;
+        }
+        .check {
+            font-size: 1.5rem;
         }
     }
 }
